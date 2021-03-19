@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F63663026023AD3009AB9F8 /* RecommendationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63662F26023AD3009AB9F8 /* RecommendationPage.swift */; };
+		4F63663926027C90009AB9F8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4F63663826027C90009AB9F8 /* SDWebImageSwiftUI */; };
+		4F6367132604E35D009AB9F8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4F6367122604E35D009AB9F8 /* Kingfisher */; };
+		4F63671B2604F6B5009AB9F8 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63671A2604F6B5009AB9F8 /* CustomNavigationView.swift */; };
 		4FBCC98B25D1CF1600CA9AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC98A25D1CF1600CA9AAC /* AppDelegate.swift */; };
 		4FBCC98D25D1CF1600CA9AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC98C25D1CF1600CA9AAC /* SceneDelegate.swift */; };
 		4FBCC98F25D1CF1600CA9AAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC98E25D1CF1600CA9AAC /* ContentView.swift */; };
@@ -15,6 +19,15 @@
 		4FBCC99725D1CF1900CA9AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBCC99525D1CF1900CA9AAC /* LaunchScreen.storyboard */; };
 		4FBCC9A225D1CF1900CA9AAC /* ParamountPlusSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC9A125D1CF1900CA9AAC /* ParamountPlusSwiftUITests.swift */; };
 		4FBCC9AD25D1CF1900CA9AAC /* ParamountPlusSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC9AC25D1CF1900CA9AAC /* ParamountPlusSwiftUIUITests.swift */; };
+		4FBCC9C425D1E97000CA9AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC9C325D1E97000CA9AAC /* AppDelegate.swift */; };
+		4FBCC9C625D1E97000CA9AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC9C525D1E97000CA9AAC /* SceneDelegate.swift */; };
+		4FBCC9C825D1E97000CA9AAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC9C725D1E97000CA9AAC /* ContentView.swift */; };
+		4FBCC9CA25D1E97300CA9AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBCC9C925D1E97300CA9AAC /* Assets.xcassets */; };
+		4FBCC9CD25D1E97300CA9AAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBCC9CC25D1E97300CA9AAC /* Preview Assets.xcassets */; };
+		4FBCC9D025D1E97300CA9AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FBCC9CE25D1E97300CA9AAC /* LaunchScreen.storyboard */; };
+		4FBCC9DC25D1E97300CA9AAC /* PPlusClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC9DB25D1E97300CA9AAC /* PPlusClipTests.swift */; };
+		4FBCC9E725D1E97300CA9AAC /* PPlusClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC9E625D1E97300CA9AAC /* PPlusClipUITests.swift */; };
+		4FBCC9EB25D1E97300CA9AAC /* PPlusClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 4FBCC9C125D1E97000CA9AAC /* PPlusClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +45,46 @@
 			remoteGlobalIDString = 4FBCC98625D1CF1600CA9AAC;
 			remoteInfo = ParamountPlusSwiftUI;
 		};
+		4FBCC9D825D1E97300CA9AAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FBCC97F25D1CF1600CA9AAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FBCC9C025D1E97000CA9AAC;
+			remoteInfo = PPlusClip;
+		};
+		4FBCC9E325D1E97300CA9AAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FBCC97F25D1CF1600CA9AAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FBCC9C025D1E97000CA9AAC;
+			remoteInfo = PPlusClip;
+		};
+		4FBCC9E925D1E97300CA9AAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FBCC97F25D1CF1600CA9AAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FBCC9C025D1E97000CA9AAC;
+			remoteInfo = PPlusClip;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4FBCC9EF25D1E97300CA9AAC /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				4FBCC9EB25D1E97300CA9AAC /* PPlusClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4F63662F26023AD3009AB9F8 /* RecommendationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPage.swift; sourceTree = "<group>"; };
+		4F63671A2604F6B5009AB9F8 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		4FBCC98725D1CF1600CA9AAC /* ParamountPlusSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParamountPlusSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FBCC98A25D1CF1600CA9AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FBCC98C25D1CF1600CA9AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +99,21 @@
 		4FBCC9A825D1CF1900CA9AAC /* ParamountPlusSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParamountPlusSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FBCC9AC25D1CF1900CA9AAC /* ParamountPlusSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamountPlusSwiftUIUITests.swift; sourceTree = "<group>"; };
 		4FBCC9AE25D1CF1900CA9AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FBCC9C125D1E97000CA9AAC /* PPlusClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPlusClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FBCC9C325D1E97000CA9AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4FBCC9C525D1E97000CA9AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4FBCC9C725D1E97000CA9AAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4FBCC9C925D1E97300CA9AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4FBCC9CC25D1E97300CA9AAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4FBCC9CF25D1E97300CA9AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4FBCC9D125D1E97300CA9AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FBCC9D225D1E97300CA9AAC /* PPlusClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PPlusClip.entitlements; sourceTree = "<group>"; };
+		4FBCC9D725D1E97300CA9AAC /* PPlusClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPlusClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FBCC9DB25D1E97300CA9AAC /* PPlusClipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPlusClipTests.swift; sourceTree = "<group>"; };
+		4FBCC9DD25D1E97300CA9AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FBCC9E225D1E97300CA9AAC /* PPlusClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPlusClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FBCC9E625D1E97300CA9AAC /* PPlusClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPlusClipUITests.swift; sourceTree = "<group>"; };
+		4FBCC9E825D1E97300CA9AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6367132604E35D009AB9F8 /* Kingfisher in Frameworks */,
+				4F63663926027C90009AB9F8 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +140,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4FBCC9BE25D1E97000CA9AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FBCC9D425D1E97300CA9AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FBCC9DF25D1E97300CA9AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +170,9 @@
 				4FBCC98925D1CF1600CA9AAC /* ParamountPlusSwiftUI */,
 				4FBCC9A025D1CF1900CA9AAC /* ParamountPlusSwiftUITests */,
 				4FBCC9AB25D1CF1900CA9AAC /* ParamountPlusSwiftUIUITests */,
+				4FBCC9C225D1E97000CA9AAC /* PPlusClip */,
+				4FBCC9DA25D1E97300CA9AAC /* PPlusClipTests */,
+				4FBCC9E525D1E97300CA9AAC /* PPlusClipUITests */,
 				4FBCC98825D1CF1600CA9AAC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +183,9 @@
 				4FBCC98725D1CF1600CA9AAC /* ParamountPlusSwiftUI.app */,
 				4FBCC99D25D1CF1900CA9AAC /* ParamountPlusSwiftUITests.xctest */,
 				4FBCC9A825D1CF1900CA9AAC /* ParamountPlusSwiftUIUITests.xctest */,
+				4FBCC9C125D1E97000CA9AAC /* PPlusClip.app */,
+				4FBCC9D725D1E97300CA9AAC /* PPlusClipTests.xctest */,
+				4FBCC9E225D1E97300CA9AAC /* PPlusClipUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +196,8 @@
 				4FBCC98A25D1CF1600CA9AAC /* AppDelegate.swift */,
 				4FBCC98C25D1CF1600CA9AAC /* SceneDelegate.swift */,
 				4FBCC98E25D1CF1600CA9AAC /* ContentView.swift */,
+				4F63662F26023AD3009AB9F8 /* RecommendationPage.swift */,
+				4F63671A2604F6B5009AB9F8 /* CustomNavigationView.swift */,
 				4FBCC99025D1CF1900CA9AAC /* Assets.xcassets */,
 				4FBCC99525D1CF1900CA9AAC /* LaunchScreen.storyboard */,
 				4FBCC99825D1CF1900CA9AAC /* Info.plist */,
@@ -136,6 +232,47 @@
 			path = ParamountPlusSwiftUIUITests;
 			sourceTree = "<group>";
 		};
+		4FBCC9C225D1E97000CA9AAC /* PPlusClip */ = {
+			isa = PBXGroup;
+			children = (
+				4FBCC9C325D1E97000CA9AAC /* AppDelegate.swift */,
+				4FBCC9C525D1E97000CA9AAC /* SceneDelegate.swift */,
+				4FBCC9C725D1E97000CA9AAC /* ContentView.swift */,
+				4FBCC9C925D1E97300CA9AAC /* Assets.xcassets */,
+				4FBCC9CE25D1E97300CA9AAC /* LaunchScreen.storyboard */,
+				4FBCC9D125D1E97300CA9AAC /* Info.plist */,
+				4FBCC9D225D1E97300CA9AAC /* PPlusClip.entitlements */,
+				4FBCC9CB25D1E97300CA9AAC /* Preview Content */,
+			);
+			path = PPlusClip;
+			sourceTree = "<group>";
+		};
+		4FBCC9CB25D1E97300CA9AAC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4FBCC9CC25D1E97300CA9AAC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4FBCC9DA25D1E97300CA9AAC /* PPlusClipTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FBCC9DB25D1E97300CA9AAC /* PPlusClipTests.swift */,
+				4FBCC9DD25D1E97300CA9AAC /* Info.plist */,
+			);
+			path = PPlusClipTests;
+			sourceTree = "<group>";
+		};
+		4FBCC9E525D1E97300CA9AAC /* PPlusClipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4FBCC9E625D1E97300CA9AAC /* PPlusClipUITests.swift */,
+				4FBCC9E825D1E97300CA9AAC /* Info.plist */,
+			);
+			path = PPlusClipUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,12 +283,18 @@
 				4FBCC98325D1CF1600CA9AAC /* Sources */,
 				4FBCC98425D1CF1600CA9AAC /* Frameworks */,
 				4FBCC98525D1CF1600CA9AAC /* Resources */,
+				4FBCC9EF25D1E97300CA9AAC /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4FBCC9EA25D1E97300CA9AAC /* PBXTargetDependency */,
 			);
 			name = ParamountPlusSwiftUI;
+			packageProductDependencies = (
+				4F63663826027C90009AB9F8 /* SDWebImageSwiftUI */,
+				4F6367122604E35D009AB9F8 /* Kingfisher */,
+			);
 			productName = ParamountPlusSwiftUI;
 			productReference = 4FBCC98725D1CF1600CA9AAC /* ParamountPlusSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -192,6 +335,59 @@
 			productReference = 4FBCC9A825D1CF1900CA9AAC /* ParamountPlusSwiftUIUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4FBCC9C025D1E97000CA9AAC /* PPlusClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FBCC9EC25D1E97300CA9AAC /* Build configuration list for PBXNativeTarget "PPlusClip" */;
+			buildPhases = (
+				4FBCC9BD25D1E97000CA9AAC /* Sources */,
+				4FBCC9BE25D1E97000CA9AAC /* Frameworks */,
+				4FBCC9BF25D1E97000CA9AAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PPlusClip;
+			productName = PPlusClip;
+			productReference = 4FBCC9C125D1E97000CA9AAC /* PPlusClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
+		4FBCC9D625D1E97300CA9AAC /* PPlusClipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FBCC9F025D1E97300CA9AAC /* Build configuration list for PBXNativeTarget "PPlusClipTests" */;
+			buildPhases = (
+				4FBCC9D325D1E97300CA9AAC /* Sources */,
+				4FBCC9D425D1E97300CA9AAC /* Frameworks */,
+				4FBCC9D525D1E97300CA9AAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FBCC9D925D1E97300CA9AAC /* PBXTargetDependency */,
+			);
+			name = PPlusClipTests;
+			productName = PPlusClipTests;
+			productReference = 4FBCC9D725D1E97300CA9AAC /* PPlusClipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4FBCC9E125D1E97300CA9AAC /* PPlusClipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FBCC9F325D1E97300CA9AAC /* Build configuration list for PBXNativeTarget "PPlusClipUITests" */;
+			buildPhases = (
+				4FBCC9DE25D1E97300CA9AAC /* Sources */,
+				4FBCC9DF25D1E97300CA9AAC /* Frameworks */,
+				4FBCC9E025D1E97300CA9AAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FBCC9E425D1E97300CA9AAC /* PBXTargetDependency */,
+			);
+			name = PPlusClipUITests;
+			productName = PPlusClipUITests;
+			productReference = 4FBCC9E225D1E97300CA9AAC /* PPlusClipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -212,6 +408,17 @@
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 4FBCC98625D1CF1600CA9AAC;
 					};
+					4FBCC9C025D1E97000CA9AAC = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					4FBCC9D625D1E97300CA9AAC = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 4FBCC9C025D1E97000CA9AAC;
+					};
+					4FBCC9E125D1E97300CA9AAC = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 4FBCC9C025D1E97000CA9AAC;
+					};
 				};
 			};
 			buildConfigurationList = 4FBCC98225D1CF1600CA9AAC /* Build configuration list for PBXProject "ParamountPlusSwiftUI" */;
@@ -223,6 +430,10 @@
 				Base,
 			);
 			mainGroup = 4FBCC97E25D1CF1600CA9AAC;
+			packageReferences = (
+				4F63663726027C90009AB9F8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				4F6367112604E35D009AB9F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 4FBCC98825D1CF1600CA9AAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,6 +441,9 @@
 				4FBCC98625D1CF1600CA9AAC /* ParamountPlusSwiftUI */,
 				4FBCC99C25D1CF1900CA9AAC /* ParamountPlusSwiftUITests */,
 				4FBCC9A725D1CF1900CA9AAC /* ParamountPlusSwiftUIUITests */,
+				4FBCC9C025D1E97000CA9AAC /* PPlusClip */,
+				4FBCC9D625D1E97300CA9AAC /* PPlusClipTests */,
+				4FBCC9E125D1E97300CA9AAC /* PPlusClipUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +473,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4FBCC9BF25D1E97000CA9AAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FBCC9D025D1E97300CA9AAC /* LaunchScreen.storyboard in Resources */,
+				4FBCC9CD25D1E97300CA9AAC /* Preview Assets.xcassets in Resources */,
+				4FBCC9CA25D1E97300CA9AAC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FBCC9D525D1E97300CA9AAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FBCC9E025D1E97300CA9AAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -267,6 +505,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FBCC98B25D1CF1600CA9AAC /* AppDelegate.swift in Sources */,
+				4F63663026023AD3009AB9F8 /* RecommendationPage.swift in Sources */,
+				4F63671B2604F6B5009AB9F8 /* CustomNavigationView.swift in Sources */,
 				4FBCC98D25D1CF1600CA9AAC /* SceneDelegate.swift in Sources */,
 				4FBCC98F25D1CF1600CA9AAC /* ContentView.swift in Sources */,
 			);
@@ -288,6 +528,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4FBCC9BD25D1E97000CA9AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FBCC9C425D1E97000CA9AAC /* AppDelegate.swift in Sources */,
+				4FBCC9C625D1E97000CA9AAC /* SceneDelegate.swift in Sources */,
+				4FBCC9C825D1E97000CA9AAC /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FBCC9D325D1E97300CA9AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FBCC9DC25D1E97300CA9AAC /* PPlusClipTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FBCC9DE25D1E97300CA9AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FBCC9E725D1E97300CA9AAC /* PPlusClipUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,6 +567,21 @@
 			target = 4FBCC98625D1CF1600CA9AAC /* ParamountPlusSwiftUI */;
 			targetProxy = 4FBCC9A925D1CF1900CA9AAC /* PBXContainerItemProxy */;
 		};
+		4FBCC9D925D1E97300CA9AAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FBCC9C025D1E97000CA9AAC /* PPlusClip */;
+			targetProxy = 4FBCC9D825D1E97300CA9AAC /* PBXContainerItemProxy */;
+		};
+		4FBCC9E425D1E97300CA9AAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FBCC9C025D1E97000CA9AAC /* PPlusClip */;
+			targetProxy = 4FBCC9E325D1E97300CA9AAC /* PBXContainerItemProxy */;
+		};
+		4FBCC9EA25D1E97300CA9AAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FBCC9C025D1E97000CA9AAC /* PPlusClip */;
+			targetProxy = 4FBCC9E925D1E97300CA9AAC /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -308,6 +589,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				4FBCC99625D1CF1900CA9AAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4FBCC9CE25D1E97300CA9AAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FBCC9CF25D1E97300CA9AAC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -434,6 +723,7 @@
 		4FBCC9B225D1CF1900CA9AAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +744,7 @@
 		4FBCC9B325D1CF1900CA9AAC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -551,6 +842,128 @@
 			};
 			name = Release;
 		};
+		4FBCC9ED25D1E97300CA9AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PPlusClip/PPlusClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"PPlusClip/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = PPlusClip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KNG.ParamountPlusSwiftUI.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4FBCC9EE25D1E97300CA9AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PPlusClip/PPlusClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"PPlusClip/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = PPlusClip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KNG.ParamountPlusSwiftUI.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4FBCC9F125D1E97300CA9AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PPlusClipTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KNG.ParamountPlusSwiftUI.PPlusClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPlusClip.app/PPlusClip";
+			};
+			name = Debug;
+		};
+		4FBCC9F225D1E97300CA9AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PPlusClipTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KNG.ParamountPlusSwiftUI.PPlusClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPlusClip.app/PPlusClip";
+			};
+			name = Release;
+		};
+		4FBCC9F425D1E97300CA9AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PPlusClipUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KNG.ParamountPlusSwiftUI.PPlusClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PPlusClip;
+			};
+			name = Debug;
+		};
+		4FBCC9F525D1E97300CA9AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PPlusClipUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KNG.ParamountPlusSwiftUI.PPlusClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PPlusClip;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -590,7 +1003,66 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4FBCC9EC25D1E97300CA9AAC /* Build configuration list for PBXNativeTarget "PPlusClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FBCC9ED25D1E97300CA9AAC /* Debug */,
+				4FBCC9EE25D1E97300CA9AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FBCC9F025D1E97300CA9AAC /* Build configuration list for PBXNativeTarget "PPlusClipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FBCC9F125D1E97300CA9AAC /* Debug */,
+				4FBCC9F225D1E97300CA9AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FBCC9F325D1E97300CA9AAC /* Build configuration list for PBXNativeTarget "PPlusClipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FBCC9F425D1E97300CA9AAC /* Debug */,
+				4FBCC9F525D1E97300CA9AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F63663726027C90009AB9F8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+		4F6367112604E35D009AB9F8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F63663826027C90009AB9F8 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F63663726027C90009AB9F8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		4F6367122604E35D009AB9F8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F6367112604E35D009AB9F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4FBCC97F25D1CF1600CA9AAC /* Project object */;
 }
