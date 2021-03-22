@@ -115,5 +115,6 @@ struct RelatedShowsGrid: View {
         })
         
         .padding(.horizontal)
+        .padding(.top, 8)
     }
 }
