@@ -11,22 +11,9 @@ let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
 struct CustomNavigationView: View {
-    
-    var body: some View {
-        ShowPage()
-    }
-}
-
-struct CustomNavigationView_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomNavigationView()
-    }
-}
-
-struct ShowPage : View {
     @State var index = 0
-    
     var body: some View {
+        
         VStack(spacing: 0) {
             
             AppBar(index: self.$index)
@@ -47,6 +34,12 @@ struct ShowPage : View {
         }
         .animation(.default)
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct CustomNavigationView_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomNavigationView()
     }
 }
 
