@@ -24,13 +24,14 @@ struct CustomNavigationView: View {
                             .tag(0)
                         RecommendationPage()
                             .tag(1)
-
                         Third()
                             .tag(2)
                     })
             
                 ///Allows the swipe to happen
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .animation(.linear)
+                .transition(.slide)
         }
         .animation(.default)
         .edgesIgnoringSafeArea(.all)
@@ -52,10 +53,12 @@ struct AppBar: View {
             ///Custom Nav Ttitle
             Text("Home")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                
+                .frame(width: UIScreen.main.bounds.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.white)
-                .padding(.leading)
-                .padding(.bottom)
-            
+                .padding(.bottom, 8)
+                .background(Color.yellow)
+
             
             ///Custom nav sections
             HStack(spacing: 0) {
@@ -68,6 +71,8 @@ struct AppBar: View {
                     VStack(spacing: 8) {
                         Text("Episode")
                             .foregroundColor(self.index == 0 ? .white : Color.white.opacity(0.7))
+                            
+                            .fontWeight(self.index == 0 ? .bold : .regular)
                             .font(.system(size: 16))
                         
                         Capsule()
@@ -86,6 +91,7 @@ struct AppBar: View {
                         
                         Text("Related Shows")
                             .foregroundColor(self.index == 1 ? .white : Color.white.opacity(0.7))
+                            .fontWeight(self.index == 1 ? .bold : .regular)
                             .font(.system(size: 16))
                         
                         
@@ -102,6 +108,7 @@ struct AppBar: View {
                     VStack(spacing: 8) {
                         Text("About")
                             .foregroundColor(self.index == 2 ? .white : Color.white.opacity(0.7))
+                            .fontWeight(self.index == 2 ? .bold : .regular)
                             .font(.system(size: 16))
                         
                         Capsule()
@@ -110,8 +117,7 @@ struct AppBar: View {
                     }
                     
                 }
-            }
-            
+            } 
         }
         .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 15)
         .padding(.horizontal)

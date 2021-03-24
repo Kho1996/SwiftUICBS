@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class RelatedShowModel: ObservableObject {
+    @Published var show: RelatedShow?
+    
+}
