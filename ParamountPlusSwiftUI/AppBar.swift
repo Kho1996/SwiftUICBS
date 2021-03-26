@@ -12,7 +12,7 @@ struct AppBar: View {
     
     var sections = ["Episode", "Related Shows", "About", "Info", "Pizza", "Hamburger", "Pasta", "I dont even know"]
     
-    let tabsSpacing = CGFloat(8)
+    let tabsSpacing = CGFloat(20)
 
     private func tabWidth(at index: Int) -> CGFloat {
         let label = UILabel()
@@ -22,11 +22,6 @@ struct AppBar: View {
       }
 
       private var leadingPadding: CGFloat {
-        
-        
-//        let label = UILabel()
-//        label.text = sections[index]
-//        let labelWidth = label.intrinsicContentSize.width
         
         ///Padding should be the difference between text and left and right padding
         var padding: CGFloat = 0
@@ -58,43 +53,35 @@ struct AppBar: View {
                                 ForEach(0..<sections.count) { i in
                                     Button(action: {
                                         self.index = i
+                                        
                                         withAnimation(.linear) {
                                             proxy.scrollTo(i, anchor: .center)
                                         }
-                                       
+                                        
                                     }, label: {
-                                        VStack(spacing: 8) {
-                                            
-                                            Text(sections[i])
-                                                .foregroundColor(self.index == i ? .white : Color.white.opacity(0.7))
-                                                .fontWeight(.bold)
-                                                .font(.system(size: 16))
-                                                .background(Color.blue)
-//                                    ZStack {
-//
-//                                        Capsule()
-//                                            .foregroundColor(.gray)
-//                                            .frame(height: 4)
-//
-//                                        Capsule()
-//                                            .foregroundColor(self.index == i ? .white : Color.clear)
-//                                            .frame(height: 4)
-//                                    }
-                                        }
-
+                                        Text(sections[i])
+                                            .foregroundColor(self.index == i ? .white : Color.white.opacity(0.7))
+                                            .fontWeight(.bold)
+                                            .font(.system(size: 16))
+                                            .background(Color.blue)
                                     })
                                     .background(Color.red)
                                     .id(i)
                                 }
                         }
                         //Underline bar
-                        Rectangle()
-                            .frame(width: tabWidth(at: index) + 8, height: 3, alignment: .bottomLeading)
-                            .foregroundColor(.blue)
-                            
-                            ///This padding is what moves the bar
-                            .padding(.leading, leadingPadding)
-                            .animation(Animation.spring())
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .frame(width: screenWidth * 3, height: 3)
+                                .foregroundColor(Color.gray)
+                            Rectangle()
+                                .frame(width: tabWidth(at: index), height: 3, alignment: .bottomLeading)
+                                .foregroundColor(.white)
+                                
+                                ///This padding is what moves the bar
+                                .padding(.leading, leadingPadding)
+                                .animation(Animation.spring())
+                        }
                     }
                         
                     
