@@ -10,28 +10,33 @@ import SwiftUI
 struct AppBar: View {
     @Binding var index: Int
     
-    var section = ["Episode", "Related Shows", "About", "Info", "Pizza", "Hamburger", "Pasta", "I dont even know"]
+    var sections = ["Episode", "Related Shows", "About", "Info", "Pizza", "Hamburger", "Pasta", "I dont even know"]
     
-//    let tabsSpacing = CGFloat(16)
-//
-//    private func tabWidth(at index: Int) -> CGFloat {
+    let tabsSpacing = CGFloat(8)
+
+    private func tabWidth(at index: Int) -> CGFloat {
+        let label = UILabel()
+        label.text = sections[index]
+        let labelWidth = label.intrinsicContentSize.width
+        return labelWidth
+      }
+
+      private var leadingPadding: CGFloat {
+        
+        
 //        let label = UILabel()
-//        label.text = tabs[index]
+//        label.text = sections[index]
 //        let labelWidth = label.intrinsicContentSize.width
-//        return labelWidth
-//      }
-//
-//      private var leadingPadding: CGFloat {
-//        var padding: CGFloat = 0
-//        for i in 0..<tabs.count {
-//          if i < index {
-//            padding += tabWidth(at: i) + tabsSpacing
-//          }
-//        }
-//        return padding
-//      }
-//
-//      let tabs: [String]
+        
+        ///Padding should be the difference between text and left and right padding
+        var padding: CGFloat = 0
+        for i in 0..<sections.count {
+          if i < index {
+            padding += tabWidth(at: i) + tabsSpacing
+          }
+        }
+        return padding
+      }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -48,52 +53,58 @@ struct AppBar: View {
             ScrollView(.horizontal, content: {
                 ScrollViewReader { proxy in
                     ///Custom nav sections
-                    HStack(spacing: 0) {
-                        ForEach(0..<section.count) { i in
-                            Button(action: {
-                                self.index = i
-                                withAnimation(.linear) {
-                                    proxy.scrollTo(i, anchor: .center)
+                    VStack(alignment: .leading) {
+                        HStack(spacing: tabsSpacing) {
+                                ForEach(0..<sections.count) { i in
+                                    Button(action: {
+                                        self.index = i
+                                        withAnimation(.linear) {
+                                            proxy.scrollTo(i, anchor: .center)
+                                        }
+                                       
+                                    }, label: {
+                                        VStack(spacing: 8) {
+                                            
+                                            Text(sections[i])
+                                                .foregroundColor(self.index == i ? .white : Color.white.opacity(0.7))
+                                                .fontWeight(.bold)
+                                                .font(.system(size: 16))
+                                                .background(Color.blue)
+//                                    ZStack {
+//
+//                                        Capsule()
+//                                            .foregroundColor(.gray)
+//                                            .frame(height: 4)
+//
+//                                        Capsule()
+//                                            .foregroundColor(self.index == i ? .white : Color.clear)
+//                                            .frame(height: 4)
+//                                    }
+                                        }
+
+                                    })
+                                    .background(Color.red)
+                                    .id(i)
                                 }
-                               
-                                
-                            }, label: {
-                                VStack(spacing: 8) {
-                                    
-                                    Text(section[i])
-                                        .foregroundColor(self.index == i ? .white : Color.white.opacity(0.7))
-                                        .fontWeight(self.index == 1 ? .bold : .regular)
-                                        .font(.system(size: 16))
-                                    
-                                    
-                                    ZStack {
-                                        
-                                        Capsule()
-                                            .foregroundColor(.gray)
-                                            .frame(height: 4)
-                                        
-                                        Capsule()
-                                            .foregroundColor(self.index == i ? .white : Color.clear)
-                                            .frame(height: 4)
-                                    }
-                                }
-                            })
-                            
-                            .frame(width: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .id(i)
                         }
+                        //Underline bar
+                        Rectangle()
+                            .frame(width: tabWidth(at: index) + 8, height: 3, alignment: .bottomLeading)
+                            .foregroundColor(.blue)
+                            
+                            ///This padding is what moves the bar
+                            .padding(.leading, leadingPadding)
+                            .animation(Animation.spring())
                     }
-                    
+                        
                     
                 }
-                
-                
             })
         }
         .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 15)
         .padding(.horizontal)
         .padding(.bottom)
-        .background(Color(UIColor(named: "DarkMatter")!))
+        .background(Color(UIColor(named: "DarkMatter") ?? .red))
     }
 }
 
