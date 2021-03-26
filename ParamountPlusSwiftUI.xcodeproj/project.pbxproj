@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F40ACEA260BE91D007EC26B /* AppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F40ACE9260BE91D007EC26B /* AppBar.swift */; };
 		4F63663026023AD3009AB9F8 /* RecommendationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63662F26023AD3009AB9F8 /* RecommendationPage.swift */; };
 		4F63663926027C90009AB9F8 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4F63663826027C90009AB9F8 /* SDWebImageSwiftUI */; };
 		4F6367132604E35D009AB9F8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4F6367122604E35D009AB9F8 /* Kingfisher */; };
@@ -86,6 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4F40ACE9260BE91D007EC26B /* AppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBar.swift; sourceTree = "<group>"; };
 		4F63662F26023AD3009AB9F8 /* RecommendationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPage.swift; sourceTree = "<group>"; };
 		4F63671A2604F6B5009AB9F8 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		4F63674426093357009AB9F8 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				4FBCC98E25D1CF1600CA9AAC /* ContentView.swift */,
 				4F63662F26023AD3009AB9F8 /* RecommendationPage.swift */,
 				4F63671A2604F6B5009AB9F8 /* CustomNavigationView.swift */,
+				4F40ACE9260BE91D007EC26B /* AppBar.swift */,
 				4FBCC99025D1CF1900CA9AAC /* Assets.xcassets */,
 				4F63674426093357009AB9F8 /* SharedAssets.xcassets */,
 				4FBCC99525D1CF1900CA9AAC /* LaunchScreen.storyboard */,
@@ -504,6 +507,7 @@
 				4F63663026023AD3009AB9F8 /* RecommendationPage.swift in Sources */,
 				4F63671B2604F6B5009AB9F8 /* CustomNavigationView.swift in Sources */,
 				4FBCC98D25D1CF1600CA9AAC /* SceneDelegate.swift in Sources */,
+				4F40ACEA260BE91D007EC26B /* AppBar.swift in Sources */,
 				4F63674E26093D62009AB9F8 /* RelatedShowModel.swift in Sources */,
 				4FBCC98F25D1CF1600CA9AAC /* ContentView.swift in Sources */,
 			);

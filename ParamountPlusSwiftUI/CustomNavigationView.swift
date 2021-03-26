@@ -16,8 +16,9 @@ struct CustomNavigationView: View {
         
         VStack(spacing: 0) {
             
-            AppBar(index: self.$index)
             
+            AppBar(index: self.$index)
+
             TabView(selection: self.$index,
                     content:  {
                         First()
@@ -27,11 +28,9 @@ struct CustomNavigationView: View {
                         Third()
                             .tag(2)
                     })
-            
+
                 ///Allows the swipe to happen
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .animation(.linear)
-                .transition(.slide)
         }
         .animation(.default)
         .edgesIgnoringSafeArea(.all)
@@ -40,89 +39,7 @@ struct CustomNavigationView: View {
 
 struct CustomNavigationView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomNavigationView()
-    }
-}
-
-struct AppBar: View {
-    @Binding var index: Int
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            
-            ///Custom Nav Ttitle
-            Text("Home")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                
-                .frame(width: UIScreen.main.bounds.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.white)
-                .padding(.bottom, 8)
-                .background(Color.yellow)
-
-            
-            ///Custom nav sections
-            HStack(spacing: 0) {
-                
-                ///Episode Page
-                Button(action: {
-                    self.index = 0
-                    
-                }) {
-                    VStack(spacing: 8) {
-                        Text("Episode")
-                            .foregroundColor(self.index == 0 ? .white : Color.white.opacity(0.7))
-                            
-                            .fontWeight(self.index == 0 ? .bold : .regular)
-                            .font(.system(size: 16))
-                        
-                        Capsule()
-                            .foregroundColor(self.index == 0 ? .white : Color.clear)
-                            .frame(height: 4)
-                    }
-                }
-  
-                ///Related Shows section
-                Button(action: {
-                    self.index = 1
-                    
-                    
-                }) {
-                    VStack(spacing: 8) {
-                        
-                        Text("Related Shows")
-                            .foregroundColor(self.index == 1 ? .white : Color.white.opacity(0.7))
-                            .fontWeight(self.index == 1 ? .bold : .regular)
-                            .font(.system(size: 16))
-                        
-                        
-                        Capsule()
-                            .foregroundColor(self.index == 1 ? .white : Color.clear)
-                            .frame(height: 4)
-                    }
-                }
-                
-                ///About section
-                Button(action: {
-                    self.index = 2
-                }) {
-                    VStack(spacing: 8) {
-                        Text("About")
-                            .foregroundColor(self.index == 2 ? .white : Color.white.opacity(0.7))
-                            .fontWeight(self.index == 2 ? .bold : .regular)
-                            .font(.system(size: 16))
-                        
-                        Capsule()
-                            .foregroundColor(self.index == 2 ? .white : Color.clear)
-                            .frame(height: 4)
-                    }
-                    
-                }
-            } 
-        }
-        .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top)! + 15)
-        .padding(.horizontal)
-        .padding(.bottom, 10)
-        .background(Color.red)
+        CustomNavigationView(index: 0)
     }
 }
 
