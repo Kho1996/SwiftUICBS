@@ -25,8 +25,19 @@ struct CustomNavigationView: View {
                             .tag(0)
                         RecommendationPage()
                             .tag(1)
-                        Third()
+                        NewView(text: "Third", color: Color.orange)
                             .tag(2)
+                        NewView(text: "Fourth", color: Color.green)
+                            .tag(3)
+                        NewView(text: "Fifth", color: Color.red)
+                            .tag(4)
+                        NewView(text: "Sixth", color: Color.blue)
+                            .tag(5)
+                        NewView(text: "Seventh", color: Color.purple)
+                            .tag(6)
+                        NewView(text: "Eighth", color: Color.pink)
+                            .tag(7)
+                        
                     })
 
                 ///Allows the swipe to happen
@@ -56,16 +67,13 @@ struct First: View {
     }
 }
 
-struct Second: View {
-    var body: some View {
-        Text("Second View")
-            .background(Color.green)
-    }
-}
 
-struct Third: View {
+struct NewView: View {
+    var text: String
+    var color: Color
+    
     var body: some View {
-        Text("Third View")
-            .background(Color.yellow)
+        Text(text)
+            .background(color)
     }
 }
