@@ -15,8 +15,6 @@ struct CustomNavigationView: View {
     var body: some View {
         
         VStack(spacing: 0) {
-            
-            
             AppBar(index: self.$index)
 
             TabView(selection: self.$index,

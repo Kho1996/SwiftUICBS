@@ -38,10 +38,10 @@ class GridViewModel: ObservableObject {
                 let json = try JSONDecoder().decode(RSS.self, from: data)
                 DispatchQueue.main.async {
                     self.relatedShows = json.relatedShows
-                    print(self.relatedShows)
+//                    print(self.relatedShows)
                     self.relatedShows.forEach { (show) in
                         let posterUrl = show.showAssets.filepath_show_browse_poster
-                        print("PosterURL: \n", posterUrl)
+//                        print("PosterURL: \n", posterUrl)
                     }
                 }
                 

@@ -12,24 +12,40 @@ struct AppBar: View {
     
     var sections = ["Episode", "Related Shows", "About", "Info", "Pizza", "Hamburger", "Pasta", "I dont even know"]
     
-    let tabsSpacing = CGFloat(20)
+    let tabsSpacing = CGFloat(8)
 
     private func tabWidth(at index: Int) -> CGFloat {
         let label = UILabel()
         label.text = sections[index]
         let labelWidth = label.intrinsicContentSize.width
+        print("LabelWidth:",labelWidth)
         return labelWidth
       }
+    
+    private func totalTabWidth(data: [String]) -> CGFloat {
+        var totalWidth: CGFloat = 0
+        for i in data {
+            let label = UILabel()
+            label.text = i
+            let labelWidth = label.intrinsicContentSize.width
+            totalWidth += labelWidth + tabsSpacing
+        }
+        
+        return totalWidth
+    }
 
       private var leadingPadding: CGFloat {
-        
         ///Padding should be the difference between text and left and right padding
         var padding: CGFloat = 0
         for i in 0..<sections.count {
           if i < index {
+            print("Initial padding: ", padding)
             padding += tabWidth(at: i) + tabsSpacing
+            print("Final padding: \(padding) after adding indexTabWidth: \(tabWidth(at: i)) and \(tabsSpacing)")
           }
         }
+        
+        print("Final Padding \(padding)")
         return padding
       }
     
@@ -38,17 +54,35 @@ struct AppBar: View {
             
             ///Custom Nav Ttitle
             Text("Home")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                
-                .frame(width: UIScreen.main.bounds.width, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .font(.system(size: 22, weight: .semibold))
+                .frame(width: UIScreen.main.bounds.width)
                 .foregroundColor(.white)
                 .padding(.bottom, 8)
-                .background(Color.yellow)
             
-            ScrollView(.horizontal, content: {
+            ScrollView(.horizontal, showsIndicators: false, content: {
                 ScrollViewReader { proxy in
                     ///Custom nav sections
                     VStack(alignment: .leading) {
+                        //Underline bar
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .frame(width: totalTabWidth(data: sections), height: 3)
+                                .foregroundColor(Color.gray)
+                            
+                            Rectangle()
+                                .frame(width: tabWidth(at: index), height: 3, alignment: .topLeading)
+                                .foregroundColor(.white)
+                                
+                                
+                                ///This padding is what moves the bar
+                                ///Edges, length
+                                .padding(.leading, leadingPadding)
+                                .animation(Animation.spring())
+                        }
+                        
+                        .frame(height: 10)
+                        
+                        ///Sections
                         HStack(spacing: tabsSpacing) {
                                 ForEach(0..<sections.count) { i in
                                     Button(action: {
@@ -69,27 +103,21 @@ struct AppBar: View {
                                     .id(i)
                                 }
                         }
-                        //Underline bar
-                        ZStack(alignment: .leading) {
-                            Rectangle()
-                                .frame(width: screenWidth * 3, height: 3)
-                                .foregroundColor(Color.gray)
-                            Rectangle()
-                                .frame(width: tabWidth(at: index), height: 3, alignment: .bottomLeading)
-                                .foregroundColor(.white)
-                                
-                                ///This padding is what moves the bar
-                                .padding(.leading, leadingPadding)
-                                .animation(Animation.spring())
-                        }
-                    }
                         
-                    
+                       Spacer()
+                        .frame(height: 10)
+                        
+                    }
                 }
+                
             })
+            
+            
+            
+            
         }
         .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 15)
-        .padding(.horizontal)
+//        .padding(.horizontal)
         .padding(.bottom)
         .background(Color(UIColor(named: "DarkMatter") ?? .red))
     }
