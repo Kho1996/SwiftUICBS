@@ -20,7 +20,7 @@ struct AppBar: View {
         
         ///I added an extra 2 padding because selected section seems to be lagging and doesnt end on end of text
         ///Seems to be related to tabsSpacing. When 8, padding = 1, when 16, padding = 2.
-        let labelWidth = label.intrinsicContentSize.width + 2
+        let labelWidth = label.intrinsicContentSize.width + 1
         print("LabelWidth:",labelWidth)
         return labelWidth
       }
@@ -43,7 +43,7 @@ struct AppBar: View {
         for i in 0..<sections.count {
           if i < index {
             print("Initial padding: ", padding)
-            padding += tabWidth(at: i) + tabsSpacing
+            padding += tabWidth(at: i) + tabsSpacing + 1
             print("Final padding: \(padding) after adding indexTabWidth: \(tabWidth(at: i)) and \(tabsSpacing)")
           }
         }
@@ -83,7 +83,7 @@ struct AppBar: View {
                                 .animation(Animation.spring())
                         }
                         
-                        .frame(height: 10)
+//                        .frame(height: 10)
                         
                         ///Sections
                         HStack(spacing: tabsSpacing) {
@@ -108,14 +108,13 @@ struct AppBar: View {
                                             .foregroundColor(self.index == i ? .white : Color.white.opacity(0.7))
                                             .fontWeight(.bold)
                                             .font(.system(size: 16))
-                                            .background(Color.blue)
+                                            .background(Color(UIColor(named: "DarkMatter") ?? .red))
                                     })
                                     .id(i)
                                 }
                         }
-                        
+                        .frame(height: 20)
                         .background(Color.green)
-                        .padding(.leading, 6)
                         
                        Spacer()
                         .frame(height: 10)
@@ -176,7 +175,6 @@ struct CustomButton: View {
         .frame(width: 120, alignment: .center)
     }
 }
-
 
 struct ScrollViewModifier: ViewModifier {
     init() {
