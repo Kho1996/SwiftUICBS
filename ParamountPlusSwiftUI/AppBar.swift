@@ -12,12 +12,15 @@ struct AppBar: View {
     
     var sections = ["Episode", "Related Shows", "About", "Info", "Pizza", "Hamburger", "Pasta", "I dont even know"]
     
-    let tabsSpacing = CGFloat(8)
+    let tabsSpacing = CGFloat(16)
 
     private func tabWidth(at index: Int) -> CGFloat {
         let label = UILabel()
         label.text = sections[index]
-        let labelWidth = label.intrinsicContentSize.width
+        
+        ///I added an extra 2 padding because selected section seems to be lagging and doesnt end on end of text
+        ///Seems to be related to tabsSpacing. When 8, padding = 1, when 16, padding = 2.
+        let labelWidth = label.intrinsicContentSize.width + 2
         print("LabelWidth:",labelWidth)
         return labelWidth
       }
@@ -89,7 +92,15 @@ struct AppBar: View {
                                         self.index = i
                                         
                                         withAnimation(.linear) {
-                                            proxy.scrollTo(i, anchor: .center)
+                                            
+                                            ///This checks ensures that when we select last 2 items, scrollView doesnt try to align selectedIndex to middle
+                                            if i < sections.count - 2 {
+                                                proxy.scrollTo(i, anchor: .center)
+                                            } else if i == sections.count - 2 {
+                                                proxy.scrollTo(i)
+                                        } else {
+                                                proxy.scrollTo(i, anchor: .trailing)
+                                            }
                                         }
                                         
                                     }, label: {
@@ -99,17 +110,19 @@ struct AppBar: View {
                                             .font(.system(size: 16))
                                             .background(Color.blue)
                                     })
-                                    .background(Color.red)
                                     .id(i)
                                 }
                         }
+                        
+                        .background(Color.green)
+                        .padding(.leading, 6)
                         
                        Spacer()
                         .frame(height: 10)
                         
                     }
                 }
-                
+                .modifier(ScrollViewModifier())
             })
             
             
@@ -161,6 +174,17 @@ struct CustomButton: View {
             }
         })
         .frame(width: 120, alignment: .center)
+    }
+}
+
+
+struct ScrollViewModifier: ViewModifier {
+    init() {
+        UIScrollView.appearance().bounces = false
+    }
+    
+    func body(content: Content) -> some View {
+        return content
     }
 }
 
