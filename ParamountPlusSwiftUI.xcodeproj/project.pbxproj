@@ -168,6 +168,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F40AD032612D406007EC26B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F40AD042612D411007EC26B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4F40AD052612D41A007EC26B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4F63675D26093E00009AB9F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +245,9 @@
 		4FBCC98925D1CF1600CA9AAC /* ParamountPlusSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				4F40AD052612D41A007EC26B /* View */,
+				4F40AD042612D411007EC26B /* ViewModel */,
+				4F40AD032612D406007EC26B /* Model */,
 				4FBCC98A25D1CF1600CA9AAC /* AppDelegate.swift */,
 				4FBCC98C25D1CF1600CA9AAC /* SceneDelegate.swift */,
 				4F40ACFC2612D344007EC26B /* LightHostingController.swift */,

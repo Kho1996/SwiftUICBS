@@ -64,6 +64,11 @@ struct AppBar: View {
             
             ScrollView(.horizontal, showsIndicators: false, content: {
                 ScrollViewReader { proxy in
+                    
+                    ///Using GeometryReader
+                    ///Gets you the x point of frame
+///                      let x = proxy.frame(in: .global).minX
+                    
                     ///Custom nav sections
                     VStack(alignment: .leading) {
                         //Underline bar
@@ -82,8 +87,6 @@ struct AppBar: View {
                                 .padding(.leading, leadingPadding)
                                 .animation(Animation.spring())
                         }
-                        
-//                        .frame(height: 10)
                         
                         ///Sections
                         HStack(spacing: tabsSpacing) {
@@ -113,7 +116,6 @@ struct AppBar: View {
                                     .id(i)
                                 }
                         }
-                        .frame(height: 20)
                         .background(Color.green)
                         
                        Spacer()
