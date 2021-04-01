@@ -54,14 +54,12 @@ class GridViewModel: ObservableObject {
 
 struct RecommendationPage: View {
     
-    
-    
     var body: some View {
         ScrollView {
             RelatedShowsGrid()
         }
         
-        .background(Color.black)
+        .background(Color(UIColor(named: "DarkMatter") ?? .red))
         .ignoresSafeArea(edges: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
         
     }

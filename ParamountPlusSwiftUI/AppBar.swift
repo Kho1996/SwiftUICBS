@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppBar: View {
-    @Binding var index: Int
+    @Binding var activeIndex: Int
     
     var sections = ["Episode", "Related Shows", "About", "Info", "Pizza", "Hamburger", "Pasta", "I dont even know"]
     
@@ -41,7 +41,7 @@ struct AppBar: View {
         ///Padding should be the difference between text and left and right padding
         var padding: CGFloat = 0
         for i in 0..<sections.count {
-          if i < index {
+          if i < activeIndex {
             print("Initial padding: ", padding)
             padding += tabWidth(at: i) + tabsSpacing + 1
             print("Final padding: \(padding) after adding indexTabWidth: \(tabWidth(at: i)) and \(tabsSpacing)")
@@ -62,75 +62,87 @@ struct AppBar: View {
                 .foregroundColor(.white)
                 .padding(.bottom, 8)
             
-            ScrollView(.horizontal, showsIndicators: false, content: {
-                ScrollViewReader { proxy in
-                    
-                    ///Using GeometryReader
-                    ///Gets you the x point of frame
-///                      let x = proxy.frame(in: .global).minX
-                    
-                    ///Custom nav sections
-                    VStack(alignment: .leading) {
-                        //Underline bar
-                        ZStack(alignment: .leading) {
-                            Rectangle()
-                                .frame(width: totalTabWidth(data: sections), height: 3)
-                                .foregroundColor(Color.gray)
-                            
-                            Rectangle()
-                                .frame(width: tabWidth(at: index), height: 3, alignment: .topLeading)
-                                .foregroundColor(.white)
-                                
-                                
-                                ///This padding is what moves the bar
-                                ///Edges, length
-                                .padding(.leading, leadingPadding)
-                                .animation(Animation.spring())
-                        }
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false, content: {
+                   
+                        ///Using GeometryReader
+                        ///Gets you the x point of frame
+    ///                      let x = proxy.frame(in: .global).minX
                         
-                        ///Sections
-                        HStack(spacing: tabsSpacing) {
+                        ///Custom nav sections
+                        VStack(alignment: .leading) {
+                            //Underline bar
+                            ZStack(alignment: .leading) {
+                                Rectangle()
+                                    .frame(width: totalTabWidth(data: sections), height: 3)
+                                    .foregroundColor(Color.gray)
+                                
+                                Rectangle()
+                                    .frame(width: tabWidth(at: activeIndex), height: 3, alignment: .topLeading)
+                                    .foregroundColor(.white)
+                                    
+                                    ///This padding is what moves the bar
+                                    ///Edges, length
+                                    .padding(.leading, leadingPadding)
+                                    .animation(Animation.spring())
+                            }
+                            
+                            ///Sections
+                            HStack(spacing: tabsSpacing) {
                                 ForEach(0..<sections.count) { i in
                                     Button(action: {
-                                        self.index = i
+                                        self.activeIndex = i
                                         
                                         withAnimation(.linear) {
-                                            
                                             ///This checks ensures that when we select last 2 items, scrollView doesnt try to align selectedIndex to middle
-                                            if i < sections.count - 2 {
-                                                proxy.scrollTo(i, anchor: .center)
-                                            } else if i == sections.count - 2 {
-                                                proxy.scrollTo(i)
-                                        } else {
-                                                proxy.scrollTo(i, anchor: .trailing)
+                                            if activeIndex < sections.count - 2 {
+                                                proxy.scrollTo(activeIndex, anchor: .center)
+                                            } else if activeIndex == sections.count - 2 {
+                                                proxy.scrollTo(activeIndex)
+                                            } else {
+                                                proxy.scrollTo(activeIndex, anchor: .trailing)
                                             }
                                         }
-                                        
                                     }, label: {
+                                        
                                         Text(sections[i])
-                                            .foregroundColor(self.index == i ? .white : Color.white.opacity(0.7))
+                                            .foregroundColor(self.activeIndex == i ? .white : Color.white.opacity(0.7))
                                             .fontWeight(.bold)
                                             .font(.system(size: 16))
                                             .background(Color(UIColor(named: "DarkMatter") ?? .red))
+                                            .onChange(of: activeIndex, perform: { value in
+                                                
+                                                withAnimation(.linear) {
+                                                    ///This checks ensures that when we select last 2 items, scrollView doesnt try to align selectedIndex to middle
+                                                    if activeIndex < sections.count - 2 {
+                                                        proxy.scrollTo(activeIndex, anchor: .center)
+                                                    } else if activeIndex == sections.count - 2 {
+                                                        proxy.scrollTo(activeIndex)
+                                                    } else {
+                                                        proxy.scrollTo(activeIndex, anchor: .trailing)
+                                                    }
+                                                }
+                                                
+                                            })
                                     })
                                     .id(i)
+                                    
+                                   
                                 }
+                            }
+                            
+                           Spacer()
+                            .frame(height: 10)
+                            
                         }
-                        .background(Color.green)
-                        
-                       Spacer()
-                        .frame(height: 10)
-                        
-                    }
-                }
-                .modifier(ScrollViewModifier())
-            })
-            
-            
-            
+                    
+                    .modifier(ScrollViewModifier())
+                })
+            }
+    
             
         }
-        .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 15)
+//        .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 15)
 //        .padding(.horizontal)
         .padding(.bottom)
         .background(Color(UIColor(named: "DarkMatter") ?? .red))
@@ -142,7 +154,7 @@ struct AppBar_Previews: PreviewProvider {
     @State static var value = 0
     
     static var previews: some View {
-        AppBar(index: $value)
+        AppBar(activeIndex: $value)
     }
 }
 
