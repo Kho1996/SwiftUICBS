@@ -171,44 +171,4 @@ struct AppBar_Previews: PreviewProvider {
 }
 
 
-struct CustomButton: View {
-    @Binding var index: Int
-    var buttonText: String
-    var indexSelected: Int?
-    
-    var body: some View {
-        Button(action: {
-            self.index = 0
-            
-        }, label: {
-            VStack(spacing: 8) {
-                Text(buttonText)
-                    .foregroundColor(self.index == 0 ? .white : Color.white.opacity(0.7))
-                    
-                    .fontWeight(self.index == 0 ? .bold : .regular)
-                    .font(.system(size: 16))
-                
-                ZStack {
-                    Capsule()
-                        .foregroundColor(.gray)
-                        .frame(height: 4)
-                    Capsule()
-                        .foregroundColor(self.index == 0 ? .white : Color.clear)
-                        .frame(height: 4)
-                }
-            }
-        })
-        .frame(width: 120, alignment: .center)
-    }
-}
-
-struct ScrollViewModifier: ViewModifier {
-    init() {
-        UIScrollView.appearance().bounces = false
-    }
-    
-    func body(content: Content) -> some View {
-        return content
-    }
-}
 

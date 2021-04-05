@@ -8,22 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct RSS: Decodable {
-    var relatedShows: [RelatedShow]
-}
-
-struct RelatedShow: Decodable, Hashable {
-    let relatedShowTitle: String
-    let filepath_show_logo: String
-    let showAssets: ShowAsset
-}
-
-struct ShowAsset: Decodable, Hashable {
-    let filepath_show_browse_poster: String
-}
-
-
-///                            let baseAssetUrl = "https://wwwimage-us.pplusstatic.com/thumbnails/photos/w292/"
+///let baseAssetUrl = "https://wwwimage-us.pplusstatic.com/thumbnails/photos/w292/"
 class GridViewModel: ObservableObject {
     @Published var relatedShows = [RelatedShow]()
     
@@ -65,19 +50,12 @@ struct RecommendationPage: View {
     }
 }
 
-struct RecommendationPage_Previews: PreviewProvider {
-    static var previews: some View {
-        RecommendationPage()
-    }
-}
-
 struct ViewHeightKey: PreferenceKey {
     static var defaultValue: CGFloat { 0 }
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = value + nextValue()
     }
 }
-
 
 struct RelatedShowsGrid: View {
     @ObservedObject var viewModel = GridViewModel()
@@ -114,5 +92,11 @@ struct RelatedShowsGrid: View {
         
         .padding(.horizontal)
         .padding(.top, 8)
+    }
+}
+
+struct RecommendationPage_Previews: PreviewProvider {
+    static var previews: some View {
+        RecommendationPage()
     }
 }

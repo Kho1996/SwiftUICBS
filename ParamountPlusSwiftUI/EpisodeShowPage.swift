@@ -93,33 +93,6 @@ struct EpisodeShowPage: View {
     }
 }
 
-struct Episode: Hashable {
-    var imageName: String
-    var episodeDescription: String
-    
-    
-}
-
-struct EpisodeRow: View {
-    var description: String
-    
-    var body: some View {
-        HStack {
-            Rectangle()
-                .frame(width: 120, height: 120)
-                .foregroundColor(Color.red)
-            Spacer()
-                .frame(width: 20)
-            Text(description)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color.green)
-        }
-        .frame(width: screenWidth, height: 120)
-        .padding(.leading)
-        
-    }
-}
-
 struct EpisodeShowPage_Previews: PreviewProvider {
     static var previews: some View {
         EpisodeShowPage()

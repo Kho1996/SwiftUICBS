@@ -84,7 +84,6 @@ struct TestingScrollView: View {
                 appearance.backgroundColor = .purple
                 appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
                 navigationController.navigationBar.standardAppearance = appearance
-                
             })
         }
     }
