@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct AppBar: View {
     @Binding var activeIndex: Int
-    @State var isHighlighted = true
+    @State var isFirstIndex = true
     
     var sections = ["Episode", "Related Shows", "About", "Info", "Pizza", "Hamburger", "Pasta", "I dont even know"]
     
@@ -97,9 +98,9 @@ struct AppBar: View {
                                         withAnimation(.linear) {
                                             ///This checks ensures that when we select last 2 items, scrollView doesnt try to align selectedIndex to middle
                                             if activeIndex == 0 {
-                                                isHighlighted = true
+                                                isFirstIndex = true
                                             } else {
-                                                isHighlighted = false
+                                                isFirstIndex = false
                                             }
                                             
                                             if activeIndex < sections.count - 2 {
@@ -122,9 +123,9 @@ struct AppBar: View {
                                                 withAnimation(.linear) {
                                                     
                                                     if activeIndex == 0 {
-                                                        isHighlighted = true
+                                                        isFirstIndex = true
                                                     } else {
-                                                        isHighlighted = false
+                                                        isFirstIndex = false
                                                     }
                                                     
                                                     ///This checks ensures that when we select last 2 items, scrollView doesnt try to align selectedIndex to middle
@@ -148,15 +149,15 @@ struct AppBar: View {
                             .frame(height: 10)
                             
                         }
-                    
-                    .modifier(ScrollViewModifier())
                 })
             }
-    
             
+            .introspectScrollView { (scrollView) in
+                scrollView.bounces = false
+            }
         }
         
-        .background(isHighlighted ? Color.gray.opacity(0.7) : Color(UIColor(named: "DarkMatter") ?? .red))
+        .background(isFirstIndex ? Color.gray.opacity(0.7) : Color(UIColor(named: "DarkMatter") ?? .red))
     }
 }
 
