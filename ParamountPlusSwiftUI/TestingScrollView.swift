@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct TestingScrollView: View {
     @State var selectedIndex = 0
@@ -13,8 +14,6 @@ struct TestingScrollView: View {
     var body: some View {
         
         VStack {
-            
-            
             
             NavigationView {
                 
@@ -67,61 +66,30 @@ struct TestingScrollView: View {
 
                             ///Allows the swipe to happen
                             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                        
+
                         
                         .frame(maxWidth: .infinity)
                     }
+                    .navigationTitle("Kenny")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .background(Color.yellow)
+                    
                 
             }
-//            .frame(width: screenWidth)
-            .navigationBarColor(backgroundColor: UIColor.red, titleColor: UIColor.blue)
-            .navigationTitle("Kenny")
-            
-            
+
+            .introspectNavigationController(customize: { (navigationController) in
+                navigationController.navigationBar.isTranslucent = false
+                
+                let appearance = UINavigationBarAppearance()
+                appearance.backgroundColor = .purple
+                appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+                navigationController.navigationBar.standardAppearance = appearance
+                
+            })
         }
     }
 }
 
-
-struct NavigationBarModifier: ViewModifier {
-    var backgroundColor: UIColor?
-    var titleColor: UIColor?
-    
-    init(backgroundColor: UIColor?, titleColor: UIColor?) {
-        self.backgroundColor = backgroundColor
-        let coloredAppearance = UINavigationBarAppearance()
-        coloredAppearance.configureWithTransparentBackground()
-        coloredAppearance.backgroundColor = backgroundColor
-        coloredAppearance.titleTextAttributes = [.foregroundColor: titleColor ?? .white]
-        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: titleColor ?? .white]
-        
-        UINavigationBar.appearance().standardAppearance = coloredAppearance
-        UINavigationBar.appearance().compactAppearance = coloredAppearance
-        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
-    }
-    
-    func body(content: Content) -> some View {
-        ZStack{
-            content
-            VStack {
-                GeometryReader { geometry in
-                    Color(self.backgroundColor ?? .clear)
-                        .frame(height: geometry.safeAreaInsets.top)
-                        .edgesIgnoringSafeArea(.top)
-                    Spacer()
-                }
-            }
-        }
-    }
-}
-
-extension View {
-
-    func navigationBarColor(backgroundColor: UIColor?, titleColor: UIColor?) -> some View {
-        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor, titleColor: titleColor))
-    }
-
-}
 
 struct TestingScrollView_Previews: PreviewProvider {
     static var previews: some View {

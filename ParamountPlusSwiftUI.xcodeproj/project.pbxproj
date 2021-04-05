@@ -25,6 +25,9 @@
 		4F6367A2260A6B02009AB9F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6367A1260A6B02009AB9F8 /* Assets.xcassets */; };
 		4F6367A5260A6B02009AB9F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F6367A4260A6B02009AB9F8 /* Preview Assets.xcassets */; };
 		4F6367AA260A6B02009AB9F8 /* ParamountClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 4F63679B260A6B00009AB9F8 /* ParamountClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F91CFCA261A8C950039C662 /* EpisodeShowPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F91CFC9261A8C950039C662 /* EpisodeShowPage.swift */; };
+		4F91CFD1261B79C60039C662 /* ListTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F91CFD0261B79C60039C662 /* ListTesting.swift */; };
+		4F91CFD9261B8E2E0039C662 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 4F91CFD8261B8E2E0039C662 /* Introspect */; };
 		4FBCC98B25D1CF1600CA9AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC98A25D1CF1600CA9AAC /* AppDelegate.swift */; };
 		4FBCC98D25D1CF1600CA9AAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC98C25D1CF1600CA9AAC /* SceneDelegate.swift */; };
 		4FBCC98F25D1CF1600CA9AAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCC98E25D1CF1600CA9AAC /* ContentView.swift */; };
@@ -103,6 +106,8 @@
 		4F6367A4260A6B02009AB9F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4F6367A6260A6B02009AB9F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F6367A7260A6B02009AB9F8 /* ParamountClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParamountClip.entitlements; sourceTree = "<group>"; };
+		4F91CFC9261A8C950039C662 /* EpisodeShowPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeShowPage.swift; sourceTree = "<group>"; };
+		4F91CFD0261B79C60039C662 /* ListTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTesting.swift; sourceTree = "<group>"; };
 		4FBCC98725D1CF1600CA9AAC /* ParamountPlusSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParamountPlusSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FBCC98A25D1CF1600CA9AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FBCC98C25D1CF1600CA9AAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F6367132604E35D009AB9F8 /* Kingfisher in Frameworks */,
+				4F91CFD9261B8E2E0039C662 /* Introspect in Frameworks */,
 				4F63663926027C90009AB9F8 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +264,8 @@
 				4F63671A2604F6B5009AB9F8 /* CustomNavigationView.swift */,
 				4F40ACE9260BE91D007EC26B /* AppBar.swift */,
 				4F40AD2D26153059007EC26B /* TestingScrollView.swift */,
+				4F91CFC9261A8C950039C662 /* EpisodeShowPage.swift */,
+				4F91CFD0261B79C60039C662 /* ListTesting.swift */,
 				4FBCC99025D1CF1900CA9AAC /* Assets.xcassets */,
 				4F63674426093357009AB9F8 /* SharedAssets.xcassets */,
 				4FBCC99525D1CF1900CA9AAC /* LaunchScreen.storyboard */,
@@ -356,6 +364,7 @@
 			packageProductDependencies = (
 				4F63663826027C90009AB9F8 /* SDWebImageSwiftUI */,
 				4F6367122604E35D009AB9F8 /* Kingfisher */,
+				4F91CFD8261B8E2E0039C662 /* Introspect */,
 			);
 			productName = ParamountPlusSwiftUI;
 			productReference = 4FBCC98725D1CF1600CA9AAC /* ParamountPlusSwiftUI.app */;
@@ -457,6 +466,7 @@
 			packageReferences = (
 				4F63663726027C90009AB9F8 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				4F6367112604E35D009AB9F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4F91CFD7261B8E2E0039C662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 4FBCC98825D1CF1600CA9AAC /* Products */;
 			projectDirPath = "";
@@ -534,11 +544,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FBCC98B25D1CF1600CA9AAC /* AppDelegate.swift in Sources */,
+				4F91CFCA261A8C950039C662 /* EpisodeShowPage.swift in Sources */,
 				4F63663026023AD3009AB9F8 /* RecommendationPage.swift in Sources */,
 				4F63671B2604F6B5009AB9F8 /* CustomNavigationView.swift in Sources */,
 				4F40AD2E26153059007EC26B /* TestingScrollView.swift in Sources */,
 				4FBCC98D25D1CF1600CA9AAC /* SceneDelegate.swift in Sources */,
 				4F40ACEA260BE91D007EC26B /* AppBar.swift in Sources */,
+				4F91CFD1261B79C60039C662 /* ListTesting.swift in Sources */,
 				4F63674E26093D62009AB9F8 /* RelatedShowModel.swift in Sources */,
 				4FBCC98F25D1CF1600CA9AAC /* ContentView.swift in Sources */,
 				4F40ACFD2612D345007EC26B /* LightHostingController.swift in Sources */,
@@ -1020,6 +1032,14 @@
 				minimumVersion = 6.2.1;
 			};
 		};
+		4F91CFD7261B8E2E0039C662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1037,6 +1057,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F6367112604E35D009AB9F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		4F91CFD8261B8E2E0039C662 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F91CFD7261B8E2E0039C662 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
