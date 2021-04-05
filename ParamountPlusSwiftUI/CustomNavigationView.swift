@@ -15,7 +15,7 @@ struct CustomNavigationView: View {
     
     var body: some View {
         
-        NavigationView {
+     
             VStack(spacing: 0) {
                 AppBar(activeIndex: self.$activeIndex)
 
@@ -25,7 +25,6 @@ struct CustomNavigationView: View {
                                 .tag(0)
                             RecommendationPage()
                                 .tag(1)
-                            
                             NewView(text: "Third", color: Color.orange, index: 2)
                             NewView(text: "Fourth", color: Color.green, index: 3)
                             NewView(text: "Fifth", color: Color.red, index: 4)
@@ -39,11 +38,8 @@ struct CustomNavigationView: View {
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
             }
-            
-            
-        }.navigationTitle("Home")
-        
-        
+            .ignoresSafeArea(.all, edges: /*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/)
+       
 
     }
 }

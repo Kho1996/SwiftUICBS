@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AppBar: View {
     @Binding var activeIndex: Int
+    @State var isHighlighted = true
     
     var sections = ["Episode", "Related Shows", "About", "Info", "Pizza", "Hamburger", "Pasta", "I dont even know"]
     
@@ -95,6 +96,12 @@ struct AppBar: View {
                                         
                                         withAnimation(.linear) {
                                             ///This checks ensures that when we select last 2 items, scrollView doesnt try to align selectedIndex to middle
+                                            if activeIndex == 0 {
+                                                isHighlighted = true
+                                            } else {
+                                                isHighlighted = false
+                                            }
+                                            
                                             if activeIndex < sections.count - 2 {
                                                 proxy.scrollTo(activeIndex, anchor: .center)
                                             } else if activeIndex == sections.count - 2 {
@@ -113,6 +120,13 @@ struct AppBar: View {
                                             .onChange(of: activeIndex, perform: { value in
                                                 
                                                 withAnimation(.linear) {
+                                                    
+                                                    if activeIndex == 0 {
+                                                        isHighlighted = true
+                                                    } else {
+                                                        isHighlighted = false
+                                                    }
+                                                    
                                                     ///This checks ensures that when we select last 2 items, scrollView doesnt try to align selectedIndex to middle
                                                     if activeIndex < sections.count - 2 {
                                                         proxy.scrollTo(activeIndex, anchor: .center)
@@ -126,7 +140,6 @@ struct AppBar: View {
                                             })
                                     })
                                     .id(i)
-                                    
                                    
                                 }
                             }
@@ -142,10 +155,8 @@ struct AppBar: View {
     
             
         }
-//        .padding(.top, (UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0) + 15)
-//        .padding(.horizontal)
-        .padding(.bottom)
-        .background(Color(UIColor(named: "DarkMatter") ?? .red))
+        
+        .background(isHighlighted ? Color.gray.opacity(0.7) : Color(UIColor(named: "DarkMatter") ?? .red))
     }
 }
 
