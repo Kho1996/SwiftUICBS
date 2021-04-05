@@ -248,6 +248,7 @@
 		4F91CFF2261BB77B0039C662 /* RandomTutorials */ = {
 			isa = PBXGroup;
 			children = (
+				4F91CFD0261B79C60039C662 /* ListTesting.swift */,
 				4FBCC98E25D1CF1600CA9AAC /* ContentView.swift */,
 			);
 			path = RandomTutorials;
@@ -292,7 +293,6 @@
 				4F63671A2604F6B5009AB9F8 /* CustomNavigationView.swift */,
 				4F40AD2D26153059007EC26B /* TestingScrollView.swift */,
 				4F91CFC9261A8C950039C662 /* EpisodeShowPage.swift */,
-				4F91CFD0261B79C60039C662 /* ListTesting.swift */,
 				4FBCC99025D1CF1900CA9AAC /* Assets.xcassets */,
 				4F63674426093357009AB9F8 /* SharedAssets.xcassets */,
 				4FBCC99525D1CF1900CA9AAC /* LaunchScreen.storyboard */,
